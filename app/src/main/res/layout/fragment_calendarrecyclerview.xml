@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#581818">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+
+            <TextView
+                android:text="12:00 pm"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/timeTextView"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:textStyle="normal"
+                android:paddingRight="8dp"
+                android:textAlignment="textEnd" />
+
+
+
+        <FrameLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#ffffff"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="event title"
+                android:id="@+id/eventNameTextView"
+                android:textSize="20sp"
+                android:textColor="#ffffff"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Event Description"
+                android:id="@+id/eventDescTextView"
+                android:textSize="17sp"
+                android:textColor="#cccccc"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:background="#cccccc"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"/>
+
+</LinearLayout>
