@@ -44,11 +44,8 @@ public class ClubDetails extends Fragment {
         final TextView clubDescription = (TextView) v.findViewById(R.id.club_detail_description);
 
         clubName.setText(club.getName());
-        clubName.setTextColor(Color.BLACK);
         clubDate.setText(club.getMeeting_Time());
-        clubDate.setTextColor(Color.BLACK);
         clubDescription.setText(club.getDescription());
-        clubDescription.setTextColor(Color.BLACK);
 
         Glide.with(getActivity().getApplicationContext()).load(club.getBackground_Image()).asBitmap().override(100,100).into(new BitmapImageViewTarget(backgroundimageView){
             @Override

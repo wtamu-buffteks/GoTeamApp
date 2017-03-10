@@ -2,6 +2,7 @@ package com.goteam.wtbuffteks.goteam;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 
 import com.parse.ParseObject;
 
-public class StartActivity extends AppCompatActivity implements CalendarFragment.OnListFragmentInteractionListener {
+public class StartActivity extends AppCompatActivity implements CalendarFragment.OnListFragmentInteractionListener, EventAdapter.eventListInterface {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -47,15 +48,15 @@ public class StartActivity extends AppCompatActivity implements CalendarFragment
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarstart);
         toolbar.setTitle("GoTeam");
-        setSupportActionBar(toolbar);
-        TextView tvSave = (TextView) findViewById(R.id.toolbar_save);
-        final Context context = getApplicationContext();
-        tvSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,"touched that",Toast.LENGTH_LONG).show();
-            }
-        });
+//        setSupportActionBar(toolbar);
+//        TextView tvSave = (TextView) findViewById(R.id.toolbar_save);
+//        final Context context = getApplicationContext();
+//        tvSave.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context,"touched that",Toast.LENGTH_LONG).show();
+//            }
+//        });
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -179,6 +180,14 @@ public class StartActivity extends AppCompatActivity implements CalendarFragment
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+
+    @Override
+    public void eventOnClick(ParseObject parseObject){
+        Intent eventDetail = new Intent(this, EventDetail.class);
+        eventDetail.putExtra("eventObjectID", parseObject.getObjectId());
+        startActivity(eventDetail);
+    }
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -210,6 +219,9 @@ public class StartActivity extends AppCompatActivity implements CalendarFragment
             // Show 3 total pages.
             return 4;
         }
+
+
+
 
         @Override
         public CharSequence getPageTitle(int position) {

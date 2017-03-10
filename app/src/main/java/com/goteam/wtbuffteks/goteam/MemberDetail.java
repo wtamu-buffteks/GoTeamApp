@@ -42,17 +42,9 @@ public class MemberDetail extends AppCompatActivity {
                 .getSerializable("member");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarstart);
-        toolbar.setTitle("GoTeam");
+        toolbar.setTitle("Member Profiles");
         toolbar.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(toolbar);
-        TextView tvSave = (TextView) findViewById(R.id.toolbar_save);
-        final Context context = getApplicationContext();
-        tvSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,"touched that",Toast.LENGTH_LONG).show();
-            }
-        });
+
 
         TextView name = (TextView)findViewById(R.id.memberDetailName);
         TextView email = (TextView)findViewById(R.id.memberDetailEmail);
@@ -63,11 +55,11 @@ public class MemberDetail extends AppCompatActivity {
 
 
         name.setText(member.getFirstName() + " " + member.getLastName());
-        name.setTextColor(Color.BLACK);
+
         email.setText(member.getEmail());
-        email.setTextColor(Color.BLACK);
+
         phone.setText(member.getPhone());
-        phone.setTextColor(Color.BLACK);
+
 
         Glide.with(this)
                 .load(member.getPic()).asBitmap()

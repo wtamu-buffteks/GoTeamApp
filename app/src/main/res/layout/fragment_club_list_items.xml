@@ -41,6 +41,11 @@
             android:paddingBottom="8dp"
             android:paddingLeft="8dp">
 
+            <FrameLayout
+                android:layout_height="54dp"
+                android:layout_width="54dp"
+                android:background="#ffffff"
+                android:padding="2dp">
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -49,6 +54,7 @@
                 android:layout_weight="0"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp" />
+            </FrameLayout>
 
             <TextView
                 android:text="Club Name"
@@ -58,7 +64,8 @@
                 android:textSize="22sp"
                 android:textColor="#ffffff"
                 android:textStyle="normal|bold"
-                android:layout_weight="0"/>
+                android:layout_weight="0"
+                android:paddingLeft="8dp"/>
 
         </LinearLayout>
 

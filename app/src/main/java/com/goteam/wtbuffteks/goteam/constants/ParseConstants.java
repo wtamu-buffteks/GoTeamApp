@@ -10,7 +10,7 @@ public class ParseConstants {
     //event constants
     static public String classNameEvent = "Event";
     static public String eventNameEvent = "EventName";
-    static public String dateEvent = "date";
+    static public String dateEvent = "Date";
     static public String hostFlagEvent = "HostFlag";
     static public String dateTimeEvent = "DateTime";
     static public String descriptionEvent = "Description";

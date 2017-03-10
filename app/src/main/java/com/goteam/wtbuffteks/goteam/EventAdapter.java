@@ -28,9 +28,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
     private Fragment eventFragment;
     private Context mContext;
     private List<ParseObject> eventObjects;
+    private eventListInterface fListener;
 
-    public EventAdapter(List<ParseObject> objects){
+    public EventAdapter(List<ParseObject> objects, eventListInterface eListener){
         eventObjects = objects;
+        fListener = eListener;
     }
     public EventAdapter(ArrayList<Event> eventList, Fragment targetFragment) {
         this.eventList = eventList;
@@ -79,6 +81,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
                 }
             });
         }
+        holder.eventObject = eventObject;
+        holder.eventListView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fListener.eventOnClick(holder.eventObject);
+            }
+        });
+
 
 
 
@@ -92,36 +102,24 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     public class EventViewHolder extends RecyclerView.ViewHolder {
 
+        public ParseObject eventObject;
+        public View eventListView;
         public ImageView pictureView;
         public TextView eventName;
         public TextView dateTextView;
         public EventViewHolder(View view) {
             super(view);
 
+            eventListView = view;
             pictureView = (ImageView) view.findViewById(R.id.eventImageView);
             eventName = (TextView) view.findViewById(R.id.eventNameTextView);
             dateTextView = (TextView) view.findViewById(R.id.dateTextView);
-
-
-            //TODO : Set OnClickListener For EventDetails
-
-//            view.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    EventDetails newFragment = new EventDetails();
-//                    FragmentTransaction ft = eventFragment.getFragmentManager().beginTransaction();
-//                    Bundle bundle = new Bundle();
-//
-//                    bundle.putSerializable("event", eventList.get(getAdapterPosition()));
-//                    newFragment.setArguments(bundle);
-//                    ft.addToBackStack(null);
-//                    ft.replace(android.R.id.content, newFragment).commit();
-//                }
-//            });
-
         }
+    }
 
 
+    public interface eventListInterface {
+        void eventOnClick(ParseObject parseObject);
     }
 
 }

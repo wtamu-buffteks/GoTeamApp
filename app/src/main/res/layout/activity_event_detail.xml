@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_event_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.goteam.wtbuffteks.goteam.EventDetail">
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/event_detail_image"
+            android:paddingBottom="12dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:text="EventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_detail_name"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingLeft="8dp"
+            android:paddingBottom="4dp"/>
+        <TextView
+            android:text="DateListing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_detail_date"
+            android:gravity="left"
+            android:textSize="18sp"
+            android:paddingLeft="8dp"/>
+
+        <TextView
+            android:text="Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/event_detail_description"
+            android:gravity="left"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

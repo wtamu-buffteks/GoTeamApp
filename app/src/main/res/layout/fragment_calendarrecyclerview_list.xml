@@ -10,4 +10,5 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.goteam.wtbuffteks.goteam.MainActivity"
-    tools:listitem="@layout/fragment_calendarrecyclerview" />
+    tools:listitem="@layout/fragment_calendarrecyclerview"
+    android:background="#581818"/>
